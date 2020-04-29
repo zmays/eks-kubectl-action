@@ -22,8 +22,6 @@ jobs:
       - name: Build and push CONTAINER_NAME
         uses: ianbelcher/eks-kubectl-action@master
         with:
-          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws_region: ${{ secrets.AWS_REGION }}
           cluster_name: ${{ secrets.CLUSTER_NAME }}
           # below arg is appended to kubectl
