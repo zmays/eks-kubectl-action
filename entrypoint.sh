@@ -9,4 +9,5 @@ aws --version
 echo "Attempting to update kubeconfig for aws"
 
 aws eks --region "$INPUT_AWS_REGION" update-kubeconfig --name "$INPUT_CLUSTER_NAME"
-kubectl "$@"
+aws sts get-caller-identity
+bash "$@"
